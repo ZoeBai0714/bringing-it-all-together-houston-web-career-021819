@@ -51,7 +51,7 @@ class Dog
    def self.find_or_create_by(dog)
 
        results = DB[:conn].execute(
-           “SELECT * FROM dogs WHERE name = ‘#{dog[:name]}’ AND breed = ‘#{dog[:breed]}’;”
+           "SELECT * FROM dogs WHERE name = ‘#{dog[:name]}’ AND breed = ‘#{dog[:breed]}’;"
        )
        if results == []
            self.create(dog)#return Dog.create(dog[:name],dog[:breed])
